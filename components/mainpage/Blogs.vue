@@ -31,7 +31,7 @@ const { data } = await useFetch('https://dev.to/api/articles', {
           I write about my experiences, projects, and things I learn on dev.to. I hope you
           enjoy reading them!
         </p>
-        <NuxtLink to="/blog">
+        <NuxtLink to="https://dev.to/owlnai">
           <uiNotReallyAButton class="mt-4">
             View all blog posts
           </uiNotReallyAButton>
