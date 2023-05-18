@@ -35,7 +35,7 @@ const items = [{
         class="flex flex-col w-full max-w-6xl sm:items-center gap-y-6 sm:justify-center"
       >
         <UnoIcon
-          class="-z-1 i-ph-link-simple-duotone?mask text-6xl bg-gradient-to-br from-cinder-500 via-cinder-300 dark:via-cinder-900 dark:to-zinc-900 to-zinc-300 w-48 h-48 absolute dark:top-8 top-70 left-1/2 -translate-x-1/2 hidden sm:block"
+          class="-z-1 i-ph-link-simple-duotone?mask text-6xl bg-gradient-to-br from-cinder-500 via-cinder-300 dark:via-cinder-900 dark:to-zinc-900 to-zinc-300 w-48 h-48 absolute top-8 light:opacity-30 left-1/2 -translate-x-1/2 hidden sm:block"
         />
         <h2 class="text-3xl font-semibold font-headings 2xl:text-5xl magic">
           Quick links

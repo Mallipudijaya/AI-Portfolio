@@ -1,6 +1,6 @@
 <template>
   <section
-    class="border-t border-zinc-400 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-950/40  dark:[background-image:radial-gradient(54.75%_54.75%_at_52.02%_-13.74%,_#151515_0%,_rgba(36,_30,_48,_0)_100%)]"
+    class="border-t border-indigo-300 dark:border-zinc-700 [background-image:radial-gradient(54.75%_54.75%_at_52.02%_-13.74%,_hsla(240,100%,80%,0.3)_0%,_hsla(136,_100%,_48%,_0)_100%)] bg-white/60 dark:bg-zinc-950/40  dark:[background-image:radial-gradient(54.75%_54.75%_at_52.02%_-13.74%,_#151515_0%,_rgba(36,_30,_48,_0)_100%)]"
   >
     <div
       class="relative container mx-auto flex flex-col items-center justify-center w-full gap-10 py-16 font-sans md:py-24 lg:py-32 isolate px-6 2xl:px-0"
