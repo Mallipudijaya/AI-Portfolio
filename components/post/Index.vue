@@ -17,7 +17,7 @@ if (process.client) {
 
 <template>
   <article
-    class="mx-auto container max-w-6xl pt-26 sm:py-8 px-6 2xl:px-0 print:p-0 relative isolate"
+    class="mx-auto container max-w-6xl pt-26 sm:py-8 px-6 2xl:px-0 print:p-0 relative isolate overflow-hidden"
   >
             <div
             class="absolute w-full h-sm -z-1 right-80 top-0 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.6)_0%,_rgba(34,_57,_16,_0)_100%)] rotate-45"
