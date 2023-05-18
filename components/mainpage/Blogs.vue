@@ -16,10 +16,10 @@ const { data } = await useFetch('https://dev.to/api/articles', {
       class="relative container mx-auto flex flex-col lg:flex-row lg:items-center max-w-6xl justify-between w-full gap-10 py-16 font-sans md:py-24 lg:py-32 isolate px-6 2xl:px-0"
     >
       <UnoIcon
-        class="-z-1 i-ph-notepad-duotone?mask text-6xl bg-gradient-to-br from-sky-600 to-cinder-1000 w-48 h-48 absolute left-0 top-10 opacity-50 hidden sm:block"
+        class="-z-1 i-ph-notepad-duotone?mask text-6xl bg-gradient-to-br from-sky-600 to-cinder-1000 w-32 h-32 absolute left-0 top-10 opacity-50 hidden sm:block"
       />
       <UnoIcon
-        class="-z-1 i-ph-pencil-duotone?mask text-6xl bg-gradient-to-br from-sky-600 to-cinder-1000 w-48 h-48 absolute left-50 top-10 opacity-50 hidden sm:block"
+        class="-z-1 i-ph-pencil-duotone?mask text-6xl bg-gradient-to-br from-sky-600 to-cinder-1000 w-32 h-32 absolute left-30 top-10 opacity-50 hidden sm:block"
       />
       <div class="flex flex-col gap-y-5">
         <h2 class="text-3xl font-semibold font-headings 2xl:text-5xl magic">
