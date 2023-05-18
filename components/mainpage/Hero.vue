@@ -3,7 +3,7 @@ const images = [
   {
     src: '/pixels/content.png',
     key: 'Content creation',
-    coords: 'left-60 top-55',
+    coords: 'left-40 top-55',
   },
   {
     src: '/pixels/figma.png',
