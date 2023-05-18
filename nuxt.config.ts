@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  extends: ["nuxt-seo-kit"],
+  extends: ['nuxt-seo-kit'],
   experimental: {
     payloadExtraction: true,
     componentIslands: true,
@@ -13,38 +13,39 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    "/**": { isr: 3600 },
+    '/**': { isr: 3600 },
   },
   modules: [
-    "@unocss/nuxt",
-    "@nuxt/content",
+    '@unocss/nuxt',
+    '@nuxt/content',
     [
-      "@nuxtjs/color-mode",
+      '@nuxtjs/color-mode',
       {
-        classSuffix: "",
+        classSuffix: '',
       },
     ],
-    "@vueuse/nuxt",
-    "@nuxt/image-edge",
-    "@nuxtjs/fontaine",
+    '@vueuse/nuxt',
+    '@nuxt/image-edge',
+    '@nuxtjs/fontaine',
   ],
 
   runtimeConfig: {
-    lastfmKey: "",
+    lastfmKey: '',
     public: {
-      siteUrl: "https://owln.ai/",
-      siteName: "Unai Mengual",
+      siteUrl: 'https://owln.ai/',
+      siteName: 'Unai Mengual',
       siteDescription:
-        "Owl of the open-source, webdev, UI designer, translator.",
-      language: "en-US",
+        'Owl of the open-source, webdev, UI designer, translator.',
+      language: 'en-US',
     },
+  },
+
+  css: ['@unocss/reset/tailwind.css'],
+  devtools: {
+    enabled: true,
   },
 
   typescript: {
     shim: false,
   },
-  css: ["@unocss/reset/tailwind.css"],
-  devtools: {
-    enabled: true,
-  },
-});
+})

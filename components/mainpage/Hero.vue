@@ -54,10 +54,11 @@ const images = [
         </NuxtLink>
       </div>
     </div>
-    <NuxtLink to="/about">
+    <NuxtLink to="/about" aria-label="More about me">
       <nuxt-img
         src="/pixels/owl.png"
-        height="360"
+        height="288"
+        width="198"
         alt="A pixelated purple eagle owl"
         aria-hidden="true"
         class="dark:brightness-90 pixelated h-72 hover:scale-105 hover:rotate-3 transition-transform duration-500 ease-in-out "
@@ -72,7 +73,8 @@ const images = [
         class="pixelated h-20 xl:absolute hover:brightness-125 cursor-help floating inline-block"
         :title="image.key"
         :class="image.coords"
-        height="64"
+        height="80"
+        width="80"
       />
     </div>
   </section>

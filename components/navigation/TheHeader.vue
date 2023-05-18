@@ -58,7 +58,7 @@ const navigation: HeaderLink[] = [
         </ul>
       </nav>
       <div class="hidden sm:flex gap-3">
-        <NuxtLink to="https://twitter.com/owln_ai">
+        <NuxtLink to="https://twitter.com/owln_ai" aria-label="My Twitter account">
           <UnoIcon class="i-ph-twitter-logo text-3xl hover:text-blue-400" />
         </NuxtLink>
         <utilitiesColorPicker />
