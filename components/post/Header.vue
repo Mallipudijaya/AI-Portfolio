@@ -1,11 +1,13 @@
 <script setup lang="ts">
-defineProps<{ doc: any }>();
+defineProps<{ doc: any }>()
 </script>
+
 <template>
   <header class="print:hidden">
-
     <div class="pb-8 border-b dark:border-zinc-500 border-zinc-300">
-      <NuxtLink to="/" class="block"> ← Go back </NuxtLink>
+      <NuxtLink to="/" class="block">
+        ← Go back
+      </NuxtLink>
       <h1
         class="mt-6 text-4xl font-bold text-transparent font-headings 2xl:text-4xl magic w-full"
       >
@@ -23,7 +25,7 @@ defineProps<{ doc: any }>();
               }) || "an unknown date"
             }}
           </li>
-          <li></li>
+          <li />
         </ul>
       </div>
     </div>

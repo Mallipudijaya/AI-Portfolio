@@ -22,7 +22,7 @@ function darktoggle() {
 
 <template>
   <ColorScheme
-  class="w-74px h-32px"
+    class="w-74px h-32px"
     placeholder="..."
     tag="div"
   >

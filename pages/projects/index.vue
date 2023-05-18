@@ -1,24 +1,24 @@
 <script setup>
-const posts = await queryContent("projects").find();
+const posts = await queryContent('projects').find()
 
 const { data: repos } = await useFetch(
-  "https://api.github.com/users/owlnai/repos",
+  'https://api.github.com/users/owlnai/repos',
   {
     query: {
-      type: "all",
+      type: 'all',
     },
-  }
-);
+  },
+)
 
 const filteredRepos = computed(() => {
   return repos.value
     .filter((repo) => {
-      return !repo.fork && !repo.private && repo.name !== ".github";
+      return !repo.fork && !repo.private && repo.name !== '.github'
     })
     .sort((a, b) => {
-      return b.stargazers_count - a.stargazers_count;
-    });
-});
+      return b.stargazers_count - a.stargazers_count
+    })
+})
 </script>
 
 <template>
@@ -28,7 +28,7 @@ const filteredRepos = computed(() => {
     <div class="relative isolate flex flex-col items-center">
       <div
         class="absolute w-full h-full -z-1 left-0 top-25 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.8)_0%,_rgba(34,_57,_16,_0)_100%)] "
-      ></div>
+      />
       <div
         class="max-w-3xl flex flex-col items-center justify-center gap-4 sm:gap-8 mb-8 relative"
       >
@@ -44,19 +44,21 @@ const filteredRepos = computed(() => {
           style="--stagger: 2"
           data-animate
         >
-        UI designs, full-stack web apps, technical translations and more
+          UI designs, full-stack web apps, technical translations and more
         </p>
       </div>
       <div class="w-full max-w-6xl relative my-24">
-        <div class="absolute top-0 -left-8 text-2xl floating">✨</div>
+        <div class="absolute top-0 -left-8 text-2xl floating">
+          ✨
+        </div>
         <div
           class="absolute -bottom-10 -right-8 transform-scale-x-[-1] text-2xl floating"
         >
           ✨
         </div>
         <div
-          class="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr_1fr] gap-4 w-full lg:h-90"           style="--stagger: 3"
-            data-animate
+          class="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr_1fr] gap-4 w-full lg:h-90" style="--stagger: 3"
+          data-animate
         >
           <uiCard
             v-for="post in posts"
@@ -73,41 +75,45 @@ const filteredRepos = computed(() => {
     >
       <div
         class="absolute w-sm h-full -z-1 left-30 bottom-30 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.6)_0%,_rgba(34,_57,_16,_0)_100%)] rotate-45"
-      ></div>
+      />
       <div
         class="absolute w-sm h-full -z-1 right-40 top-70 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.6)_0%,_rgba(34,_57,_16,_0)_100%)] rotate-45"
-      ></div>
+      />
       <div
         class="flex flex-col w-full max-w-6xl sm:items-center gap-y-6 sm:justify-center"
       >
-        <h2 class="text-3xl font-semibold font-headings 2xl:text-5xl magic" style="--stagger: 4"
-              data-animate>
+        <h2
+          class="text-3xl font-semibold font-headings 2xl:text-5xl magic" style="--stagger: 4"
+          data-animate
+        >
           Open-source projects
         </h2>
         <p
           class="prose sm:text-center text-lg sm:text-xl leading-8 dark:text-gray-300 max-w-43ch" style="--stagger: 5"
-              data-animate
+          data-animate
         >
           Star my projects on GitHub if you find them useful!
         </p>
       </div>
-      <GridWrapper num="3" class="mt-12" style="--stagger: 6"
-              data-animate>
+      <GridWrapper
+        num="3" class="mt-12" style="--stagger: 6"
+        data-animate
+      >
         <GridElement v-for="repo in filteredRepos" :key="repo.id">
           <template #type>
             <div class="items-center flex justify-between">
               <NuxtLink :to="repo.stargazers_url" aria-label="Stargazers">
                 <UnoIcon class="i-ph-star-bold" />
-                {{ repo.stargazers_count }}</NuxtLink
-              >
+                {{ repo.stargazers_count }}
+              </NuxtLink>
               <NuxtLink
+                v-if="repo.homepage"
                 aria-label="Homepage"
                 class="lowercase"
-                v-if="repo.homepage"
                 to="repo.homepage"
               >
-                {{ repo.homepage.substring(8) }}</NuxtLink
-              >
+                {{ repo.homepage.substring(8) }}
+              </NuxtLink>
             </div>
           </template>
           <template #description>

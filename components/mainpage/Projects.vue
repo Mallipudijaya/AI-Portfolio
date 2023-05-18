@@ -8,27 +8,26 @@
       <div
         class="flex flex-col w-full max-w-6xl sm:items-center gap-y-6 sm:justify-center"
       >
- 
         <UnoIcon
           class="-z-1 i-ph-hammer-duotone?mask text-6xl bg-gradient-to-br from-zinc-500 via-zinc-800 w-32 h-32 absolute top-30 left-30 -rotate-20 hidden sm:block"
         />
         <UnoIcon
           class="-z-1 i-ph-palette-duotone?mask text-6xl bg-gradient-to-br from-zinc-500 via-zinc-800 w-32 h-32 absolute top-30 right-30 rotate-20 transform-scale-x-[-1] hidden sm:block"
         />
-        <h2 class="text-3xl font-semibold font-headings 2xl:text-5xl magic"      style="--stagger:4" data-animate >
+        <h2 class="text-3xl font-semibold font-headings 2xl:text-5xl magic" style="--stagger:4" data-animate>
           My latest projects
         </h2>
         <p
-          class="prose sm:text-center text-lg sm:text-xl leading-8 dark:text-gray-300 max-w-43ch"      style="--stagger:5" data-animate
+          class="prose sm:text-center text-lg sm:text-xl leading-8 dark:text-gray-300 max-w-43ch" style="--stagger:5" data-animate
         >
           From open-source projects to websites and apps. I love to create and
           share my work with the world.
         </p>
         <NuxtLink to="/projects">
-        <uiNotReallyAButton class="inline-block mt-4"      style="--stagger:6" data-animate>
-          View all projects
-        </uiNotReallyAButton>
-      </NuxtLink>
+          <uiNotReallyAButton class="inline-block mt-4" style="--stagger:6" data-animate>
+            View all projects
+          </uiNotReallyAButton>
+        </NuxtLink>
       </div>
     </div>
   </section>

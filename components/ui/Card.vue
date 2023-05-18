@@ -1,36 +1,37 @@
 <script setup lang="ts">
-import { ref } from "vue";
-const card = ref(null);
+import { ref } from 'vue'
 
-const { elementX, elementY, isOutside } = useMouseInElement(card);
+const project = defineProps<{
+  path: string
+  title: string
+  technologies?: string[]
+  date: number
+  thumbnail?: string
+  type: string
+  description?: string
+  url?: string
+}>()
+
+const card = ref(null)
+
+const { elementX, elementY, isOutside } = useMouseInElement(card)
 
 const cardTransform = computed(() => {
   return isOutside.value
-    ? ""
+    ? ''
     : `radial-gradient(
       circle at
       ${elementX.value}px
       ${elementY.value}px,
       #ffffff55,
-      #0000000f)`;
-});
-
-const project = defineProps<{
-  path: string;
-  title: string;
-  technologies?: string[];
-  date: number;
-  thumbnail?: string;
-  type: string;
-  description?: string;
-  url?: string;
-}>();
+      #0000000f)`
+})
 </script>
 
 <template>
   <NuxtLink
-    :to="project.path"
     ref="card"
+    :to="project.path"
     class="relative flex flex-col justify-between h-auto gap-4 pt-4 overflow-hidden bg-white border isolate dark:bg-black border-zinc-300 dark:border-zinc-700 rounded-xl"
   >
     <div class="absolute top-0 left-0 z-20 w-full h-full glow" />
@@ -68,7 +69,7 @@ const project = defineProps<{
       alt=""
       height="168"
       width="268"
-       class='w-full border-t -z-1 border-zinc-300 dark:border-zinc-700'
+      class="w-full border-t -z-1 border-zinc-300 dark:border-zinc-700"
     />
   </NuxtLink>
 </template>

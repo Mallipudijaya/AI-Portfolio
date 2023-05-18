@@ -60,7 +60,7 @@ const { data } = await useFetch('https://dev.to/api/articles', {
                           "en-US",
                           {
                             dateStyle: "long",
-                          }
+                          },
                         )
                       }}
                     </time>
