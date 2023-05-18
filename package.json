@@ -19,7 +19,6 @@
     "@nuxt/image-edge": "1.0.0-28059208.2abef1b",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/fontaine": "^0.2.5",
-    "@nuxtjs/web-vitals": "^0.2.6",
     "@unocss/nuxt": "^0.51.13",
     "@unocss/reset": "^0.51.13",
     "@vercel/analytics": "^1.0.1",

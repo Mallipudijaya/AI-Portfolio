@@ -22,9 +22,6 @@ devDependencies:
   '@nuxtjs/fontaine':
     specifier: ^0.2.5
     version: 0.2.5
-  '@nuxtjs/web-vitals':
-    specifier: ^0.2.6
-    version: 0.2.6
   '@unocss/nuxt':
     specifier: ^0.51.13
     version: 0.51.13(postcss@8.4.23)(vite@4.3.7)(webpack@5.83.1)
@@ -1451,19 +1448,6 @@ packages:
       ufo: 1.1.2
     transitivePeerDependencies:
       - encoding
-      - rollup
-      - supports-color
-    dev: true
-
-  /@nuxtjs/web-vitals@0.2.6:
-    resolution: {integrity: sha512-hoLo/Lcl63rDEm1gR/VN3sSG7mO4UKzJF69lyKjm+cSWtnSinSQo4n/8V0qmDqVgC3GPfvC1X/IqZx5FaRSS/g==}
-    dependencies:
-      '@nuxt/kit': 3.5.0
-      defu: 6.1.2
-      pathe: 1.1.0
-      ufo: 1.1.2
-      web-vitals: 3.3.1
-    transitivePeerDependencies:
       - rollup
       - supports-color
     dev: true
@@ -10131,10 +10115,6 @@ packages:
   /web-streams-polyfill@3.2.1:
     resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
     engines: {node: '>= 8'}
-    dev: true
-
-  /web-vitals@3.3.1:
-    resolution: {integrity: sha512-LTfY5GjcY3ngFzNsYFSYL+AmVmlWrzPTUxSMDis2rZbf+SzT7HH3NH4Y/l45XOlrAIunOBeURN9qtBHkRskAiA==}
     dev: true
 
   /webidl-conversions@3.0.1:

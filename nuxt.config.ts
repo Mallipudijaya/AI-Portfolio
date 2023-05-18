@@ -27,7 +27,6 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxt/image-edge",
     "@nuxtjs/fontaine",
-    "@nuxtjs/web-vitals",
   ],
 
   runtimeConfig: {
