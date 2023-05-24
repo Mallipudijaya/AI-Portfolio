@@ -1,112 +1,83 @@
 <script setup lang="ts">
-defineProps<{ project?: boolean }>()
-declare const process: {
-  client: boolean
-}
-const { visibleHeadings, activeHeadings, updateHeadings } = useScrollspy()
+import type { Post } from '~/types'
 
-if (process.client) {
-  setTimeout(() => {
-    updateHeadings([
-      ...document.querySelectorAll(' h2'),
-      ...document.querySelectorAll(' h3'),
-    ])
-  }, 300)
-}
+defineProps<{ project?: boolean }>()
+
+const el = ref()
+const { path } = useRoute()
+
+const { data: doc } = await useAsyncData(`content-${path}`, () => {
+  return queryContent<Post>().where({ _path: path }).findOne()
+})
+
+provide('sharedPostData', doc)
 </script>
 
 <template>
   <article
     class="mx-auto container max-w-6xl pt-26 sm:py-8 px-6 2xl:px-0 print:p-0 relative isolate overflow-hidden"
   >
-    <div
-      class="absolute w-full h-sm -z-1 right-80 top-0 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.6)_0%,_rgba(34,_57,_16,_0)_100%)] rotate-45"
-    />
-    <div
-      class="absolute w-full h-sm -z-1 left-100 top-100 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.6)_0%,_rgba(34,_57,_16,_0)_100%)] rotate--45"
-    />
-    <ContentDoc>
-      <template #default="{ doc }">
-        <template v-if="project">
-          <OgImageStatic component="PageOgImage" />
-
-          <PostProjectHeader :doc="doc" />
-        </template>
-        <template v-else>
-          <OgImageStatic component="PageOgImage" />
-
-          <PostHeader
-            :doc="doc" style="--stagger: 1"
+    <postLightRays />
+    <template v-if="doc">
+      <OgImageStatic component="PageOgImage" />
+      <PostHeaderProject v-if="project" style="--stagger: 1" data-animate />
+      <PostHeader style="--stagger: 1" data-animate />
+      <div
+        class="relative flex flex-col-reverse gap-6 mx-auto lg:grid lg:grid-cols-4"
+      >
+        <div class="pt-10 print:p-0 lg:col-span-3 relative isolate">
+          <Lede style="--stagger: 2" data-animate>
+            {{ doc.description }}
+          </Lede>
+          <ContentRenderer
+            id="doc"
+            ref="el"
+            :value="doc"
+            class="prose text-gray-800 dark:text-gray-200/95 max-w-65ch text-lg xl:text-xl"
+            style="--stagger: 3"
             data-animate
           />
-        </template>
-
-        <div
-          class="relative flex flex-col-reverse gap-6 mx-auto lg:grid lg:grid-cols-4"
-        >
-          <div
-            class="pt-10 print:p-0 lg:col-span-3"
-          >
-            <Lede
-              style="--stagger: 2"
-              data-animate
+        </div>
+        <div class="flex relative">
+          <LegoPageProgress v-slot="{ progress }" :target="el">
+            <div
+              class="absolute left-0 bottom-0 h-full w-1px dark:bg-zinc-500 bg-zinc-300 overflow-hidden"
             >
-              {{ doc.description }}
-            </Lede>
-            <ContentRenderer
-              id="doc"
-              :value="doc"
-              class="prose text-gray-800 dark:text-gray-200/95 max-w-65ch text-lg xl:text-xl slide-enter-content" style="--stagger: 3"
-              data-animate
-            />
-          </div>
+              <div
+                class="w-full bg-gradient-to-t from-sky-400 to-pink-400"
+                :style="{ height: `${progress}%` }"
+              />
+            </div>
+          </LegoPageProgress>
           <postAside
-            :active-headings="activeHeadings" :doc="doc" style="--stagger: 2"
+            style="--stagger: 2"
             data-animate
           />
         </div>
-      </template>
-      <template #not-found>
-        <div class="space-y-4 text-center">
-          <h1 class="text-5xl font-headings font-bold text-white">
-            404
-          </h1>
-          <p>Whoops! The page you requested was not found.</p>
-          <NuxtLink
-            to="/"
-            class="block font-medium text-white underline underline-offset-4"
-          >
-            Go back
-          </NuxtLink>
-        </div>
-      </template>
-    </ContentDoc>
+      </div>
+    </template>
   </article>
 </template>
 
-<style>
-.prose a {
+<style scoped>
+.prose :deep(a) {
   color: #4491d8;
 }
 
-.prose h2 > a {
-  text-decoration: none !important;
+.prose :deep(h2 > a) {
+  text-decoration: none;
   font-weight: 600;
 }
 
-.dark .prose :where(h2, h3) a {
-  color: white !important;
+.dark .prose :deep(:where(h2, h3) a) {
+  color: white;
 }
-  .prose :where(h2, h3) a {
-  color: black !important;
-}
-
-.prose h2 {
-  color: black !important;
+.light .prose :deep(:where(h2, h3) a) {
+  color: black;
 }
 
-.prose h3 > a {
-  text-decoration: none !important;
+.prose :deep(h3 > a) {
+  text-decoration: none;
   font-weight: 500;
 }
 </style>

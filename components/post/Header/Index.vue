@@ -1,9 +1,11 @@
 <script setup lang="ts">
-defineProps<{ doc: any }>()
+import type { PostInjection } from '~/types'
+
+const doc: PostInjection = inject('sharedPostData')
 </script>
 
 <template>
-  <header class="print:hidden">
+  <header v-if="doc" class="print:hidden">
     <div class="pb-8 border-b dark:border-zinc-500 border-zinc-300">
       <NuxtLink to="/" class="block">
         ← Go back

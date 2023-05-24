@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  extends: ['nuxt-seo-kit'],
+  extends: ['nuxt-seo-kit', 'nuxt-lego'],
   experimental: {
     payloadExtraction: true,
     componentIslands: true,
@@ -13,7 +13,13 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/**': { isr: 3600 },
+    '/**': { isr: true },
+    '/projects': { isr: 3600 },
+  },
+  unlighthouse: {
+    puppeteerOptions: {
+      executablePath: '/usr/bin/google-chrome',
+    },
   },
   modules: [
     '@unocss/nuxt',
@@ -27,6 +33,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/image-edge',
     '@nuxtjs/fontaine',
+    '@unlighthouse/nuxt',
   ],
 
   runtimeConfig: {

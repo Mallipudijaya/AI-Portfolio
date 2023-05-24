@@ -13,7 +13,6 @@ const project = defineProps<{
 }>()
 
 const card = ref(null)
-
 const { elementX, elementY, isOutside } = useMouseInElement(card)
 
 const cardTransform = computed(() => {

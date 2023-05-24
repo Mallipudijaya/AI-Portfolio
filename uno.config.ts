@@ -1,4 +1,4 @@
-import { defineConfig, presetIcons, presetTypography, presetUno, presetWebFonts } from 'unocss'
+import { defineConfig, presetIcons, presetTypography, presetUno, presetWebFonts, presetAttributify } from 'unocss'
 
 export default defineConfig({
   shortcuts: {
@@ -26,11 +26,14 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetTypography(),
+    presetAttributify({
+      prefix: 'data-',
+      prefixedOnly: true,
+    }),
     presetIcons({
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',
-        // ...
       },
       cdn: 'https://esm.sh/',
     }),

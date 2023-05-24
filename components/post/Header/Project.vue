@@ -1,9 +1,12 @@
 <script setup lang="ts">
-defineProps<{ doc: any }>()
+import type { PostInjection } from '~/types'
+
+const doc: PostInjection = inject('sharedPostData')
 </script>
 
 <template>
   <header
+    v-if="doc"
     class="pb-8 mb-8 border-b dark:border-zinc-700 grid grid-cols-1 md:grid-cols-2"
   >
     <div class="space-y-4">
