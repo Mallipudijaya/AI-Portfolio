@@ -1,24 +1,46 @@
 <script setup>
 const posts = await queryContent('projects').find()
 
-const { data: repos } = await useFetch(
-  'https://api.github.com/users/owlnai/repos',
+const { data: repos } = await useLazyAsyncData(
+  'repos',
+  () =>
+    $fetch('https://api.github.com/users/owlnai/repos', {
+      query: {
+        type: 'all',
+      },
+    }),
   {
-    query: {
-      type: 'all',
-    },
+    transform: repos =>
+      repos
+        .filter((repo) => {
+          return !repo.fork && !repo.private && repo.name !== '.github'
+        })
+        .sort((a, b) => {
+          return b.stargazers_count - a.stargazers_count
+        })
+        .map(
+          ({
+            id,
+            name,
+            html_url,
+            description,
+            stargazers_count,
+            stargazers_url,
+            homepage,
+          }) => {
+            return {
+              id,
+              name,
+              html_url,
+              description,
+              stargazers_count,
+              stargazers_url,
+              homepage,
+            }
+          },
+        ),
   },
 )
-
-const filteredRepos = computed(() => {
-  return repos.value
-    .filter((repo) => {
-      return !repo.fork && !repo.private && repo.name !== '.github'
-    })
-    .sort((a, b) => {
-      return b.stargazers_count - a.stargazers_count
-    })
-})
 </script>
 
 <template>
@@ -27,7 +49,7 @@ const filteredRepos = computed(() => {
   >
     <div class="relative isolate flex flex-col items-center">
       <div
-        class="absolute w-full h-full -z-1 left-0 top-25 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.8)_0%,_rgba(34,_57,_16,_0)_100%)] "
+        class="absolute w-full h-full -z-1 left-0 top-25 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.8)_0%,_rgba(34,_57,_16,_0)_100%)]"
       />
       <div
         class="max-w-3xl flex flex-col items-center justify-center gap-4 sm:gap-8 mb-8 relative"
@@ -57,7 +79,8 @@ const filteredRepos = computed(() => {
           ✨
         </div>
         <div
-          class="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr_1fr] gap-4 w-full lg:h-90" style="--stagger: 3"
+          class="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr_1fr] gap-4 w-full lg:h-90"
+          style="--stagger: 3"
           data-animate
         >
           <uiCard
@@ -83,51 +106,55 @@ const filteredRepos = computed(() => {
         class="flex flex-col w-full max-w-6xl sm:items-center gap-y-6 sm:justify-center"
       >
         <h2
-          class="text-3xl font-semibold font-headings 2xl:text-5xl magic" style="--stagger: 4"
+          class="text-3xl font-semibold font-headings 2xl:text-5xl magic"
+          style="--stagger: 4"
           data-animate
         >
           Open-source projects
         </h2>
         <p
-          class="prose sm:text-center text-lg sm:text-xl leading-8 dark:text-gray-300 max-w-43ch" style="--stagger: 5"
+          class="prose sm:text-center text-lg sm:text-xl leading-8 dark:text-gray-300 max-w-43ch"
+          style="--stagger: 5"
           data-animate
         >
           Star my projects on GitHub if you find them useful!
         </p>
       </div>
-      <GridWrapper
-        num="3" class="mt-12" style="--stagger: 6"
-        data-animate
-      >
-        <GridElement v-for="repo in filteredRepos" :key="repo.id">
-          <template #type>
-            <div class="items-center flex justify-between">
-              <NuxtLink :to="repo.stargazers_url" aria-label="Stargazers">
-                <UnoIcon class="i-ph-star-bold" />
-                {{ repo.stargazers_count }}
+      <GridWrapper num="3" class="mt-12" style="--stagger: 6" data-animate>
+        <template v-if="pending">
+          <GridElement v-for="i in 8" :key="i" class="min-h-30 animate-pulse" />
+        </template>
+        <template v-else>
+          <GridElement v-for="repo in repos" :key="repo.id">
+            <template #type>
+              <div class="items-center flex justify-between">
+                <NuxtLink :to="repo.stargazers_url" aria-label="Stargazers">
+                  <UnoIcon class="i-ph-star-bold" />
+                  {{ repo.stargazers_count }}
+                </NuxtLink>
+                <NuxtLink
+                  v-if="repo.homepage"
+                  aria-label="Homepage"
+                  class="lowercase"
+                  to="repo.homepage"
+                >
+                  {{ repo.homepage.substring(8) }}
+                </NuxtLink>
+              </div>
+            </template>
+            <template #description>
+              <NuxtLink :to="repo.html_url">
+                {{ repo.description }}
               </NuxtLink>
-              <NuxtLink
-                v-if="repo.homepage"
-                aria-label="Homepage"
-                class="lowercase"
-                to="repo.homepage"
-              >
-                {{ repo.homepage.substring(8) }}
-              </NuxtLink>
-            </div>
-          </template>
-          <template #description>
-            <NuxtLink :to="repo.html_url">
-              {{ repo.description }}
-            </NuxtLink>
-          </template>
+            </template>
 
-          <template #default>
-            <NuxtLink :to="repo.html_url">
-              {{ repo.name }}
-            </NuxtLink>
-          </template>
-        </GridElement>
+            <template #default>
+              <NuxtLink :to="repo.html_url">
+                {{ repo.name }}
+              </NuxtLink>
+            </template>
+          </GridElement>
+        </template>
       </GridWrapper>
     </div>
   </div>
