@@ -1,46 +1,7 @@
 <script setup>
 const posts = await queryContent('projects').find()
 
-const { data: repos } = await useLazyAsyncData(
-  'repos',
-  () =>
-    $fetch('https://api.github.com/users/owlnai/repos', {
-      query: {
-        type: 'all',
-      },
-    }),
-  {
-    transform: repos =>
-      repos
-        .filter((repo) => {
-          return !repo.fork && !repo.private && repo.name !== '.github'
-        })
-        .sort((a, b) => {
-          return b.stargazers_count - a.stargazers_count
-        })
-        .map(
-          ({
-            id,
-            name,
-            html_url,
-            description,
-            stargazers_count,
-            stargazers_url,
-            homepage,
-          }) => {
-            return {
-              id,
-              name,
-              html_url,
-              description,
-              stargazers_count,
-              stargazers_url,
-              homepage,
-            }
-          },
-        ),
-  },
-)
+const { repos, pending } = await useGithubRepos()
 </script>
 
 <template>
@@ -122,7 +83,7 @@ const { data: repos } = await useLazyAsyncData(
       </div>
       <GridWrapper num="3" class="mt-12" style="--stagger: 6" data-animate>
         <template v-if="pending">
-          <GridElement v-for="i in 8" :key="i" class="min-h-30 animate-pulse" />
+          <GridElement v-for="i in 8" :key="i" class="min-h-[130px] animate-pulse" />
         </template>
         <template v-else>
           <GridElement v-for="repo in repos" :key="repo.id">
