@@ -1,4 +1,4 @@
-import { defineConfig, presetAttributify, presetIcons, presetTypography, presetUno, presetWebFonts } from 'unocss'
+import { defineConfig, presetIcons, presetTypography, presetUno, presetWebFonts } from 'unocss'
 
 export default defineConfig({
   shortcuts: {
@@ -26,10 +26,6 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetTypography(),
-    presetAttributify({
-      prefix: 'data-',
-      prefixedOnly: true,
-    }),
     presetIcons({
       extraProperties: {
         'display': 'inline-block',
