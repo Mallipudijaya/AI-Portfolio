@@ -27,6 +27,9 @@ devDependencies:
   '@nuxtjs/fontaine':
     specifier: ^0.2.5
     version: 0.2.5
+  '@octokit/types':
+    specifier: ^9.2.3
+    version: 9.2.3
   '@unlighthouse/nuxt':
     specifier: ^0.8.6
     version: 0.8.6(puppeteer@20.2.1)(typescript@5.0.4)(webpack@5.83.1)
@@ -1558,6 +1561,16 @@ packages:
       - rollup
       - supports-color
     dev: false
+
+  /@octokit/openapi-types@17.2.0:
+    resolution: {integrity: sha512-MazrFNx4plbLsGl+LFesMo96eIXkFgEtaKbnNpdh4aQ0VM10aoylFsTYP1AEjkeoRNZiiPe3T6Gl2Hr8dJWdlQ==}
+    dev: true
+
+  /@octokit/types@9.2.3:
+    resolution: {integrity: sha512-MMeLdHyFIALioycq+LFcA71v0S2xpQUX2cw6pPbHQjaibcHYwLnmK/kMZaWuGfGfjBJZ3wRUq+dOaWsvrPJVvA==}
+    dependencies:
+      '@octokit/openapi-types': 17.2.0
+    dev: true
 
   /@pkgjs/parseargs@0.11.0:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}

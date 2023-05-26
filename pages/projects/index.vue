@@ -136,7 +136,7 @@ const { data: repos } = await useLazyAsyncData(
                   v-if="repo.homepage"
                   aria-label="Homepage"
                   class="lowercase"
-                  to="repo.homepage"
+                  :to="repo.homepage"
                 >
                   {{ repo.homepage.substring(8) }}
                 </NuxtLink>
