@@ -6,7 +6,7 @@ const { repos, pending } = await useGithubRepos()
 
 <template>
   <div
-    class="relative flex flex-col items-center justify-center w-full gap-4 sm:gap-10 pt-6 pb-16 font-sans md:pb-24 md:pt-16 lg:pb-30 lg:pt-30 isolate gradient px-6 2xl:px-0 overflow-hidden"
+    class="relative flex flex-col items-center justify-center w-full gap-4 sm:gap-10 pt-12 pb-16 font-sans md:pb-24 md:pt-16 lg:pb-30 lg:pt-30 isolate gradient px-6 2xl:px-0 overflow-hidden"
   >
     <div class="relative isolate flex flex-col items-center">
       <div
@@ -30,7 +30,7 @@ const { repos, pending } = await useGithubRepos()
           UI designs, full-stack web apps, technical translations and more
         </p>
       </div>
-      <div class="w-full max-w-6xl relative my-24">
+      <div class="w-full max-w-6xl relative my-6 lg:my-24">
         <div class="absolute top-0 -left-8 text-2xl floating">
           ✨
         </div>

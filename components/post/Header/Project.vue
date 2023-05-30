@@ -7,25 +7,25 @@ const doc: PostInjection = inject('sharedPostData')
 <template>
   <header
     v-if="doc"
-    class="pb-8 mb-8 border-b dark:border-zinc-700 grid grid-cols-1 md:grid-cols-2"
+    class="pb-16 mb-8 lg:mb-0 border-b dark:border-zinc-700 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
   >
     <div class="space-y-4">
       <NuxtLink to="/" class="block">
         ← Go back
       </NuxtLink>
-      <h1 class="mt-6 font-medium">
+      <h1 class="!my-6 font-medium">
         <span
-          class="bg-clip-text bg-gradient-to-b from-gray-200 to-sky-400 inline-block text-transparent"
+          class="text-sm sm:text-base bg-clip-text bg-gradient-to-b from-gray-200 to-sky-400 inline-block text-transparent"
         >{{ doc.title }}</span>
         ·
         <span
-          class="bg-clip-text bg-gradient-to-b from-gray-200 to-pink-400 inline-block text-transparent"
+          class="text-sm sm:text-base bg-clip-text bg-gradient-to-b from-gray-200 to-pink-400 inline-block text-transparent"
         >{{ doc.url }}</span>
       </h1>
       <span
-        class="text-3xl font-bold font-headings bg-clip-text text-transparent bg-gradient-to-b from-sky-300 to-pink-300"
+        class="text-2xl sm:text-3xl font-bold font-headings bg-clip-text text-transparent bg-gradient-to-b from-sky-300 to-pink-300"
       >{{ doc.description }}</span>
-      <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-12">
+      <div class="grid grid-cols-2 justify-between">
         <section v-if="doc.technologies">
           <h2 class="font-medium">
             Technologies
@@ -37,12 +37,6 @@ const doc: PostInjection = inject('sharedPostData')
               </uiBadge>
             </li>
           </ul>
-        </section>
-        <section>
-          <h2 class="font-medium">
-            Type
-          </h2>
-          <span class="capitalize">{{ doc.type }}</span>
         </section>
         <section>
           <h2 class="font-medium">
@@ -58,7 +52,7 @@ const doc: PostInjection = inject('sharedPostData')
       </div>
     </div>
     <div class="flex justify-center">
-      <img :src="doc.thumbnail" class="rounded-2xl w-auto h-64">
+      <img :src="doc.thumbnail" class="rounded-2xl w-auto h-64 object-cover">
     </div>
   </header>
 </template>

@@ -15,7 +15,7 @@ provide('sharedPostData', doc)
 
 <template>
   <article
-    class="mx-auto container max-w-6xl pt-26 sm:py-8 px-6 2xl:px-0 print:p-0 relative isolate overflow-hidden"
+    class="mx-auto container max-w-6xl pt-6 lg:pt-16 sm:py-8 px-6 2xl:px-0 print:p-0 relative isolate overflow-hidden"
   >
     <postLightRays />
     <template v-if="doc">
@@ -39,7 +39,7 @@ provide('sharedPostData', doc)
           />
         </div>
         <div class="flex relative">
-          <LegoPageProgress v-slot="{ progress }" :target="el">
+          <LegoPageProgress v-slot="{ progress }" :target="el" class="hidden lg:block">
             <div
               class="absolute left-0 bottom-0 h-full w-1px dark:bg-zinc-500 bg-zinc-300 overflow-hidden"
             >
