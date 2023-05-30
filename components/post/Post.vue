@@ -21,7 +21,7 @@ provide('sharedPostData', doc)
     <template v-if="doc">
       <OgImageStatic component="PageOgImage" />
       <PostHeaderProject v-if="project" style="--stagger: 1" data-animate />
-      <PostHeader style="--stagger: 1" data-animate />
+      <PostHeader v-else style="--stagger: 1" data-animate />
       <div
         class="relative flex flex-col-reverse gap-6 mx-auto lg:grid lg:grid-cols-4"
       >
