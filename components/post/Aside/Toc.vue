@@ -16,7 +16,7 @@ if (process.client) {
 <template>
   <div v-if="doc?.body.toc" class="pb-3 mb-6 border-b dark:border-zinc-500 border-zinc-300">
     <span class="text-sm font-bold tracking-tight">
-      <UnoIcon class="w-5 h-5 i-iconoir-menu-scale" /> On this page
+      On this page
     </span>
     <section
       v-for="(link, index) in doc.body.toc.links"
