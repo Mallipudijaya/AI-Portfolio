@@ -45,3 +45,5 @@ dist
 # te
 *.pem
 .vercel
+
+.data

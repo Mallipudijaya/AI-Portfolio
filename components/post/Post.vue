@@ -19,7 +19,7 @@ provide('sharedPostData', doc)
   >
     <postLightRays />
     <template v-if="doc">
-      <OgImageStatic component="PageOgImage" />
+      <OgImage component="PageOgImage" />
       <PostHeaderProject v-if="project" style="--stagger: 1" data-animate />
       <PostHeader v-else style="--stagger: 1" data-animate />
       <div

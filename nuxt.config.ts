@@ -1,53 +1,46 @@
-import { defineNuxtConfig } from 'nuxt/config'
+import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-  extends: ['nuxt-seo-kit', 'nuxt-lego'],
   experimental: {
     payloadExtraction: true,
     componentIslands: true,
     typedPages: true,
   },
+  extends: ["@nuxthub/core", "nuxt-lego"],
   nitro: {
     experimental: {
       openAPI: true,
     },
   },
   routeRules: {
-    '/**': { isr: true },
-    '/projects': { isr: 3600 },
-  },
-  unlighthouse: {
-    puppeteerOptions: {
-      executablePath: '/usr/bin/google-chrome',
-    },
+    "/**": { isr: true },
+    "/projects": { isr: 3600 },
   },
   modules: [
-    '@unocss/nuxt',
-    '@nuxt/content',
+    "@unocss/nuxt",
+    "@nuxt/content",
+    "@nuxtjs/seo",
     [
-      '@nuxtjs/color-mode',
+      "@nuxtjs/color-mode",
       {
-        classSuffix: '',
+        classSuffix: "",
       },
     ],
-    '@vueuse/nuxt',
-    '@nuxt/image-edge',
-    '@nuxtjs/fontaine',
-    '@unlighthouse/nuxt',
+    "@vueuse/nuxt",
+    "@nuxt/image",
+    "@nuxtjs/fontaine",
   ],
 
   runtimeConfig: {
-    lastfmKey: '',
-    public: {
-      siteUrl: 'https://owln.ai/',
-      siteName: 'Unai Mengual',
-      siteDescription:
-        'Owl of the open-source, webdev, UI designer, translator.',
-      language: 'en-US',
-    },
+    lastfmKey: "",
   },
-
-  css: ['@unocss/reset/tailwind.css'],
+  site: {
+    url: "https://owln.ai/",
+    name: "Unai Mengual",
+    description: "Owl of the open-source, webdev, UI designer, translator.",
+    defaultLocale: "en-US",
+  },
+  css: ["@unocss/reset/tailwind.css"],
   devtools: {
     enabled: true,
   },
@@ -55,4 +48,4 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
-})
+});
