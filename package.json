@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.4.0",
-    "@nuxtjs/web-vitals": "latest"
+    "@nuxtjs/web-vitals": "latest",
+    "pnpm": "^9.1.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.8.3",
