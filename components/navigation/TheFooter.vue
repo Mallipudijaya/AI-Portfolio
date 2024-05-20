@@ -31,7 +31,7 @@ const { pending, data: song } = await useLazyFetch('/api/playing', { server: fal
       </div>
       <div>
         <div class="flex-none">
-          <p>Built with &hearts; by Unai Mengual</p>
+          <p>Built with &hearts; by JayaShree</p>
         </div>
       </div>
     </footer>

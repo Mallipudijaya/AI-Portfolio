@@ -34,7 +34,7 @@ const navigation: HeaderLink[] = [
           class="text-lg lg:text-xl font-bold font-headings xl:text-2xl dark:text-zinc-200 "
           to="/"
         >
-          Unai Mengual
+          JayaShree
         </NuxtLink>
       </div>
       <nav

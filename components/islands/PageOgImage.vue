@@ -12,7 +12,7 @@ defineProps({
   >
     <div class="flex flex-row text-5xl items-center">
       <h2 class="mr-4 text-purple-200">
-        Unai Mengual · owln.ai
+        JayaShree · owln.ai
       </h2>
       <img
         src="/pixels/owl.png"

@@ -35,8 +35,8 @@ export default defineNuxtConfig({
     lastfmKey: "",
   },
   site: {
-    url: "https://owln.ai/",
-    name: "Unai Mengual",
+    url: "https:/jayamallipudi.ai/",
+    name: "JayaShree",
     description: "Owl of the open-source, webdev, UI designer, translator.",
     defaultLocale: "en-US",
   },
