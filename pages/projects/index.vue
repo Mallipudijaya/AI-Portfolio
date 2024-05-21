@@ -27,7 +27,7 @@ const { repos, pending } = await useGithubRepos()
           style="--stagger: 2"
           data-animate
         >
-          UI designs, full-stack web apps, technical translations and more
+          full-stack web apps, Deep Learning Modals, technical translations and more
         </p>
       </div>
       <div class="w-full max-w-6xl relative my-6 lg:my-24">

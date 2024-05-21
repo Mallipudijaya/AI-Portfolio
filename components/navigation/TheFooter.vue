@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const { pending, data: song } = await useLazyFetch('/api/playing', { server: false })
+const defaultSong = {
+  track: 'Khalasi',
+  artist: 'Coke Studio',
+  duration: 0,
+  album: 'Unknown Album',
+}
+const { pending, data } = await useLazyFetch('/api/playing', { server: false })
+const song = defaultSong ?? data
 </script>
 
 <template>

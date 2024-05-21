@@ -8,7 +8,7 @@ export default async () => {
     'repos',
     () =>
       $fetch<listUserReposResponse[]>(
-        'https://api.github.com/users/owlnai/repos',
+        'https://api.github.com/users/Mallipudijaya/repos',
         {
           query: {
             type: 'all',
@@ -20,7 +20,7 @@ export default async () => {
       transform: repos =>
         repos
           .filter((repo) => {
-            return !repo.fork && !repo.private && repo.name !== '.github' && repo.name !== 'owlnai'
+            return !repo.fork && !repo.private && repo.name !== '.github' && repo.name !== 'Mallipudijaya'
           })
           .sort((a, b) => {
             return b.stargazers_count - a.stargazers_count

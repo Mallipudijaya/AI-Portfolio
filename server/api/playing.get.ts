@@ -54,7 +54,7 @@ export default defineEventHandler(async () => {
     const { recenttracks } = await $fetch<LastFMAPI>('https://ws.audioscrobbler.com/2.0/', {
       params: {
         method: 'user.getrecenttracks',
-        user: 'owlnai',
+        user: 'Mallipudijaya',
         api_key: lastfmKey,
         format: 'json',
         limit: 1,

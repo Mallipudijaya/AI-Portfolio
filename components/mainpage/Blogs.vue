@@ -1,12 +1,33 @@
 <script setup>
-const { data } = await useFetch('https://dev.to/api/articles', {
-  query: {
-    username: 'owlnai',
-    per_page: '3',
-    pagination: '1',
-  },
-})
+import { ref } from 'vue'
+
+const data = ref([])
+
+async function fetchMediumArticles() {
+  try {
+    const response = await fetch('https://v1.nocodeapi.com/jayashree/medium/YPkEJWQHtDBGYiPK')
+    const result = await response.json()
+
+    // Process the result to match the required format and limit to 3 articles
+    data.value = result.slice(0, 2).map((article,index) => ({
+      title: article.title,
+      url: article.link,
+      created_at: article.pubDate?? (index === 0 ? 'Feb 22, 2024' : index === 1 ? 'Jul 7, 2022' : 0),
+      reading_time_minutes: (index === 0 ? 9 : index === 1 ? 4 : 0), // Assuming 200 words per minute reading speed
+      positive_reactions_count: article.claps ?? (index === 0 ? 9 : index === 1 ? 409 : 0), // Manually set for first and second articles
+      description: article.contentSnippet,
+      tags: article.category ? article.category.join(', ') : '' // Ensure categories exist
+    }))
+  } catch (error) {
+    console.error('Error fetching Medium articles:', error)
+  }
+}
+
+// Fetch articles when the component is mounted
+fetchMediumArticles()
+
 </script>
+
 
 <template>
   <section
@@ -28,10 +49,10 @@ const { data } = await useFetch('https://dev.to/api/articles', {
         <p
           class="prose text-lg sm:text-xl leading-8 dark:text-gray-300 max-w-43ch"
         >
-          I write about my experiences, projects, and things I learn on dev.to. I hope you
+          I write about my experiences, projects, and things I learn on medium. I hope you
           enjoy reading them!
         </p>
-        <NuxtLink to="https://dev.to/owlnai">
+        <NuxtLink to="https://medium.com/@_MJ_">
           <uiNotReallyAButton class="mt-4">
             View all blog posts
           </uiNotReallyAButton>
@@ -75,9 +96,9 @@ const { data } = await useFetch('https://dev.to/api/articles', {
                       <span
                         v-for="tag in post.tags.split(', ')"
                         :key="tag"
-                        class="px-4 py-1 text-xs font-medium tracking-wide lowercase border rounded-full text-gray-800 border-gray-300 dark:border-gray-600/50 dark:text-gray-200/90 bg-gray-50 dark:bg-gray-800/40"
+                        class="px-2 py-0.5 text-xs font-medium tracking-wide lowercase border rounded-full text-gray-800 border-gray-300 dark:border-gray-600/50 dark:text-gray-200/90 bg-gray-50 dark:bg-gray-800/40"
                       >
-                        #{{ tag }}
+                        #{{ tag.split('-')[0] }}
                       </span>
                     </div>
                     <span

@@ -20,7 +20,7 @@ const navigation: HeaderLink[] = [
   },
   {
     label: 'Blog',
-    href: 'https://dev.to/owlnai',
+    href: 'https://medium.com/@_MJ_',
     external: true,
   },
 ]
@@ -58,7 +58,7 @@ const navigation: HeaderLink[] = [
         </ul>
       </nav>
       <div class="hidden sm:flex gap-3">
-        <NuxtLink to="https://twitter.com/owln_ai" aria-label="My Twitter account">
+        <NuxtLink to="" aria-label="My Twitter account">
           <UnoIcon class="i-ph-twitter-logo text-3xl hover:text-blue-400" />
         </NuxtLink>
         <utilitiesColorPicker />
@@ -86,7 +86,7 @@ const navigation: HeaderLink[] = [
         </li>
       </ul>
       <div class="flex sm:hidden gap-3 px-8 justify-between my-4">
-        <NuxtLink to="https://twitter.com/owln_ai" class="hover:text-blue-400 inline-flex items-center gap-2">
+        <NuxtLink to="" class="hover:text-blue-400 inline-flex items-center gap-2">
           <UnoIcon class="ph-twitter-logo text-2xl" />
           @owln_ai
         </NuxtLink>
