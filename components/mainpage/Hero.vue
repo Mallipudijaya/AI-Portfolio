@@ -36,10 +36,10 @@ const images = [
         Turning dreams into digital realities
       </h1>
       <p class="prose text-center text-lg sm:text-2xl leading-8 dark:text-gray-300" style="--stagger:2" data-animate>
-        Owl of the open-source, front-end developer and UX/UI designer
+        Owl of the open-source, front-end developer and Aspiring AI developer
       </p>
       <div class="flex gap-3 items-center justify-center" style="--stagger:3" data-animate>
-        <NuxtLink to="mailto:hi@owln.ai">
+        <NuxtLink to="mailto:jayashreemallipudi@gmail.com">
           <uiNotReallyAButton>
             <UnoIcon
               class="i-ph-envelope text-xl sm:text-2xl"

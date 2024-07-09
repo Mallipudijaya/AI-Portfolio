@@ -36,7 +36,7 @@ export default defineNuxtConfig({
   },
   site: {
     url: "https://mallipudijaya.github.io/AI-Portfolio/",
-    name: "JayaShree",
+    name: "JayaShree Mallipudi",
     description: "Owl of the open-source, webdev, UI designer, translator.",
     defaultLocale: "en-US",
   },

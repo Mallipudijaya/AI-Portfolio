@@ -5,7 +5,7 @@
     <NuxtLoadingIndicator color="#45376d" />
     <navigationTheHeader />
     <NuxtLayout>
-      <OgImage component="PageOgImage" />
+     
       <NuxtPage class="mb-auto" />
     </NuxtLayout>
     <navigationTheFooter />

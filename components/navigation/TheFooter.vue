@@ -5,8 +5,7 @@ const defaultSong = {
   duration: 0,
   album: 'Unknown Album',
 }
-const { pending, data } = await useLazyFetch('/api/playing', { server: false })
-const song = defaultSong ?? data
+const song = defaultSong 
 </script>
 
 <template>

@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "deploy": "nuxt generate && gh-pages -d dist"
   },
   "dependencies": {
     "@nuxt/image": "^1.4.0",
@@ -31,6 +32,7 @@
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "eslint": "^8.57.0",
+    "gh-pages": "^6.1.1",
     "nuxt": "3.11.0",
     "nuxt-lego": "^0.0.14",
     "wrangler": "^3.37.0"

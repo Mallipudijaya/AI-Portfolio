@@ -43,4 +43,4 @@ The website hadn't been updated since 2008, resulting in outdated design, poor p
 - Reduced architecture costs by switching to JAMstack technologies.
 - User engagement: Increased time spent on site by 30% and reduced bounce rate by 25%.
 
-If you would like more details about the project or are interested in working with me, [contact me](/contact).
+If you would like more details about the project or are interested in working with me.
