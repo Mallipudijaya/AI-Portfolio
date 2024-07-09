@@ -1,0 +1,7 @@
+# START nuxt-simple-robots (indexable)
+User-agent: *
+
+Allow: /
+
+Sitemap: https://mallipudijaya.github.io/AI-Portfolio/sitemap.xml
+# END nuxt-simple-robots
