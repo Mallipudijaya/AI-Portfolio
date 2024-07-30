@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "deploy": "nuxt generate && gh-pages -d dist"
+    "deploy": "nuxt generate && gh-pages -d dist -t true"
   },
   "dependencies": {
     "@nuxt/image": "^1.4.0",
