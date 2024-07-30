@@ -35,7 +35,7 @@ export default defineNuxtConfig({
     lastfmKey: "",
   },
   site: {
-    url: "/AI-Portfolio/",
+    url: "https://mallipudijaya.github.io/AI-Portfolio/",
     name: "JayaShree Mallipudi",
     description: "Owl of the open-source, webdev, UI designer, translator.",
     defaultLocale: "en-US",
@@ -47,5 +47,8 @@ export default defineNuxtConfig({
 
   typescript: {
     shim: false,
+  },
+  app: {
+    baseURL: '/AI-Portfolio/' // Add this line
   },
 });
