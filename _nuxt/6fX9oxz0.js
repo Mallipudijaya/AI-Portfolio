@@ -1,1 +1,0 @@
-import{_ as e,o as r,c as o,r as c}from"./BqnxPjim.js";const n={},s={class:"text-2xl tracking-tight text-gray-900 dark:text-gray-400"};function a(t,_){return r(),o("p",s,[c(t.$slots,"default")])}const d=e(n,[["render",a]]);export{d as default};
