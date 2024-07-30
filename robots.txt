@@ -3,5 +3,5 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://mallipudijaya.github.io/AI-Portfolio/sitemap.xml
+Sitemap: https:///AI-Portfolio/sitemap.xml
 # END nuxt-simple-robots
