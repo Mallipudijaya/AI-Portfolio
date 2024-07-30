@@ -35,7 +35,7 @@ export default defineNuxtConfig({
     lastfmKey: "",
   },
   site: {
-    url: "https://mallipudijaya.github.io/AI-Portfolio/",
+    url: "/AI-Portfolio/",
     name: "JayaShree Mallipudi",
     description: "Owl of the open-source, webdev, UI designer, translator.",
     defaultLocale: "en-US",
