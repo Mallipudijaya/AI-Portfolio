@@ -37,8 +37,11 @@ const song = defaultSong
       </div>
       <div>
         <div class="flex-none">
-          <p>Built with &hearts; by JayaShree</p>
-        </div>
+  <a href="https://github.com/owlnai/resume-site" target="_blank" rel="noopener noreferrer">
+    Designed by Unai Mengual
+  </a>
+  <p>Revised by Jayashree Mallipudi</p>
+</div>
       </div>
     </footer>
   </div>

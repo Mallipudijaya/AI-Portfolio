@@ -1,14 +1,16 @@
 ---
-title: Antique Radio Shop
+path: https://github.com/Mallipudijaya/MovieRecommender-TMDB
+title: Netfix Clone
 date: 1653170400000
 type: website
 technologies:
-    - Nuxt
-    - TailwindCSS
-    - Supabase
+    - React
+    - JavaScript
 url: https://antique-radioshop.com
-thumbnail: /projects/ars-mockup.jpg
-description: Luxury meets heritage
+thumbnail: /projects/netflixClone.png
+description: Sample Netflix website using React
+width: 600
+height: 500
 ---
 Antique Radio Shop is an eCommerce website specializing in selling tube radios from the 1950s. The project involved migrating the site from an outdated PHPMyAdmin-based CMS to Nuxt, with a complete rebranding and redesign to enhance performance, accessibility, and SEO.
 ## The problem

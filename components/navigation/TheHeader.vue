@@ -29,14 +29,17 @@ const navigation: HeaderLink[] = [
 <template>
   <div class="px-3 xl:px-0 fixed w-full top-0 z-1 relative print:hidden">
     <header class="backdrop-blur-sm z-1 container lg:mx-auto max-w-6xl flex justify-between py-3 dark:bg-zinc-900/30 bg-white/30 border border-zinc-300 dark:border-zinc-600 mt-8 rounded-full px-8 items-center">
+     
       <div class="flex items-center">
-        <NuxtLink
-          class="text-lg lg:text-xl font-bold font-headings xl:text-2xl dark:text-zinc-200 "
-          to="/"
-        >
-          JayaShree Mallipudi
-        </NuxtLink>
-      </div>
+  <NuxtLink to="/" class="flex items-center">
+    <img
+      src="/pixels/logo2.png"
+      alt="Logo"
+      class="w-15 h-15" 
+     
+    />
+  </NuxtLink>
+</div>
       <nav
         class="hidden lg:block"
         aria-label="Top"

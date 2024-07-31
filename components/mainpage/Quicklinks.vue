@@ -1,19 +1,19 @@
 <script setup lang="ts">
 const items = [{
   title: 'resume.ai',
-  url: 'https://mallipudijaya.github.io/generic.html',
+  url: "/about",
   desc: 'My life in a nutshell',
   icon: 'i-ph-read-cv-logo-bold',
 },
 {
   title: 'Profile',
-  url: 'https://mallipudijaya.github.io/',
+  url: 'https://mallipudijaya.github.io/portfolio',
   desc: 'All the pages on this site',
   icon: 'i-ph-map-trifold-bold',
 },
 {
   title: 'linkedin',
-  url: 'https://www.linkedin.com/in/jayashree3/',
+  url: 'https://www.linkedin.com/in/mallipudijaya/',
   desc: 'A curated list of skills',
   icon: 'i-ph-sunglasses-bold',
 },

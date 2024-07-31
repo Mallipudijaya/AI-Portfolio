@@ -1,6 +1,5 @@
 <script setup>
 const posts = await queryContent('projects').find()
-
 const { repos, pending } = await useGithubRepos()
 </script>
 
@@ -8,6 +7,7 @@ const { repos, pending } = await useGithubRepos()
   <div
     class="relative flex flex-col items-center justify-center w-full gap-4 sm:gap-10 pt-12 pb-16 font-sans md:pb-24 md:pt-16 lg:pb-30 lg:pt-30 isolate gradient px-6 2xl:px-0 overflow-hidden"
   >
+   
     <div class="relative isolate flex flex-col items-center">
       <div
         class="absolute w-full h-full -z-1 left-0 top-25 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.8)_0%,_rgba(34,_57,_16,_0)_100%)]"
@@ -27,7 +27,7 @@ const { repos, pending } = await useGithubRepos()
           style="--stagger: 2"
           data-animate
         >
-          full-stack web apps, Deep Learning Modals, technical translations and more
+          full-stack web apps, AI applications,and more
         </p>
       </div>
       <div class="w-full max-w-6xl relative my-6 lg:my-24">
@@ -54,18 +54,17 @@ const { repos, pending } = await useGithubRepos()
         </div>
       </div>
     </div>
-    <div
-      class="w-full mt-2 flex flex-col container max-w-4xl justify-center relative"
-    >
+<div style="height: 1100px;"></div>
+    <!-- Open-source Projects Section -->
+    
+    <div class="w-full mt-24 flex flex-col container max-w-4xl justify-center relative">
       <div
-        class="absolute w-sm h-full -z-1 left-30 bottom-30 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.6)_0%,_rgba(34,_57,_16,_0)_100%)] rotate-45"
+        class="absolute w-sm h-full -z-10 left-30 bottom-30 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.6)_0%,_rgba(34,_57,_16,_0)_100%)] rotate-45"
       />
       <div
-        class="absolute w-sm h-full -z-1 right-40 top-70 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.6)_0%,_rgba(34,_57,_16,_0)_100%)] rotate-45"
+        class="absolute w-sm h-full -z-10 right-40 top-70 [background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(284,_84%,_60%,_0.1)_0%,_rgba(34,_57,_16,_0)_100%)] dark:[background-image:radial-gradient(48.64%_49.21%_at_49.24%_50.03%,_hsla(244,_64%,_25%,_0.6)_0%,_rgba(34,_57,_16,_0)_100%)] rotate-45"
       />
-      <div
-        class="flex flex-col w-full max-w-6xl sm:items-center gap-y-6 sm:justify-center"
-      >
+      <div class="flex flex-col w-full max-w-6xl sm:items-center gap-y-6 sm:justify-center relative z-10">
         <h2
           class="text-3xl font-semibold font-headings 2xl:text-5xl magic"
           style="--stagger: 4"
@@ -118,5 +117,6 @@ const { repos, pending } = await useGithubRepos()
         </template>
       </GridWrapper>
     </div>
+   
   </div>
 </template>

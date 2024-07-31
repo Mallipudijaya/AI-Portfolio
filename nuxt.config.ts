@@ -37,7 +37,7 @@ export default defineNuxtConfig({
   site: {
     url: "https://mallipudijaya.github.io/AI-Portfolio/",
     name: "JayaShree Mallipudi",
-    description: "Owl of the open-source, webdev, UI designer, translator.",
+    description: "Owl of the open-source, webdev, UI designer.",
     defaultLocale: "en-US",
   },
   css: ["@unocss/reset/tailwind.css"],
@@ -47,8 +47,5 @@ export default defineNuxtConfig({
 
   typescript: {
     shim: false,
-  },
-  app: {
-    baseURL: '/AI-Portfolio/' // Add this line
   },
 });

@@ -33,23 +33,31 @@ const images = [
         class="text-4xl sm:text-5xl font-bold font-headings 2xl:text-6xl magic text-center"
         style="--stagger:1" data-animate
       >
-        Turning dreams into digital realities
+        Howdy!   <br/>I’m Jaya Shree Mallipudi
       </h1>
+      
       <p class="prose text-center text-lg sm:text-2xl leading-8 dark:text-gray-300" style="--stagger:2" data-animate>
-        Owl of the open-source, front-end developer and Aspiring AI developer
+Web  Enthusiast | AI Explorer
       </p>
+    
+
       <div class="flex gap-3 items-center justify-center" style="--stagger:3" data-animate>
+      
         <NuxtLink to="mailto:jayashreemallipudi@gmail.com">
+       
           <uiNotReallyAButton>
             <UnoIcon
               class="i-ph-envelope text-xl sm:text-2xl"
             />Contact me
           </uiNotReallyAButton>
+          
         </NuxtLink>
-        <NuxtLink to="https://resume.owln.ai">
+        <NuxtLink >
+         <a href="/pixels/Jayashree_Mallipudi.pdf">
           <uiNotReallyAButton variant="secondary">
             View CV
           </uiNotReallyAButton>
+          </a>
         </NuxtLink>
       </div>
     </div>
@@ -87,4 +95,6 @@ const images = [
 .gradient {
   background: radial-gradient(#7856d428 20%, transparent 70%);
 }
+
+
 </style>

@@ -1,10 +1,15 @@
 ---
-title: Slidev Spanish docs
+path: https://github.com/Mallipudijaya/Algorithms_Project
+title: Advanced Graph Algorithms
 date: 1635368278138
-type: translation
+type: website
+technologies: 
+    - Python
+    - Algorithms
 url: https://es.sli.dev
-thumbnail: /projects/slidev.jpg
-description: Presentation slides for developers
+thumbnail: /projects/graph.png
+description: Implementation of Advanced Graph Algorithms
+
 ---
 This project involved translating the official Slidev docs into Spanish and creating a guide for translators in other languages.
 ## Overview of the project

@@ -1,17 +1,25 @@
 ---
-title: Is Nuxt 3 Ready
+path: https://github.com/mallipudijaya
+title: BitBid
 date: 1635368278138
 type: website
 technologies: 
-    - Nuxt
-    - TailwindCSS
-url: https://antique-radioshop.com
-thumbnail: /projects/isnuxt3ready.jpg
-description: Compatibility tracker
+    - Python
+    - Django
+    - HTML
+    - CSS
+    - JavaScript
+    - Docker
+    - Heroku
+    - CI/CD 
+url: https://es.sli.dev
+thumbnail: /projects/bitbid.png
+description: Auction Website
 ---
 A website that tracked the compatibility status of third-party modules for Nuxt 3 during its beta phase.
 ## The problem
 Nuxt 3 beta was released in late 2021. At that time, most modules were incompatible with the new module architecture. Although there was an official page about modules, it didn't show their compatibility with the new version.
+
 
 [@pi0](https://github.com/nuxt/framework/discussions/751) started a discussion thread with a table showing the compatibility of each module. Someone suggested that it would be cool to create a page for this. I read it over the weekend and thought: _why not?_
 

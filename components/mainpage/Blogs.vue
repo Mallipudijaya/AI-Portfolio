@@ -6,6 +6,7 @@ const data = ref([])
 async function fetchMediumArticles() {
   try {
     const response = await fetch('https://v1.nocodeapi.com/jayashree/medium/YPkEJWQHtDBGYiPK')
+    //const response ={}
     const result = await response.json()
 
     // Process the result to match the required format and limit to 3 articles

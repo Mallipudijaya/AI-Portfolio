@@ -15,7 +15,7 @@ defineProps({
         JayaShree · owln.ai
       </h2>
       <img
-        src="/pixels/owl.png"
+        src="/pixels/logo2.png"
         width="48"
         class="transform"
       >
