@@ -37,7 +37,8 @@ const images = [
       </h1>
       
       <p class="prose text-center text-lg sm:text-2xl leading-8 dark:text-gray-300" style="--stagger:2" data-animate>
-Web  Enthusiast | AI Explorer
+I build things for the web.
+
       </p>
     
 
